@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function CopyrightPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 to-purple-100 py-12 px-4">
@@ -17,7 +19,7 @@ export default function CopyrightPage() {
             <h2 className="text-2xl font-semibold text-gray-800 mb-3">图片来源</h2>
             <ul className="list-disc list-inside space-y-2 leading-relaxed">
               <li>产品图片来自 Unsplash、Pexels 等免费图库，遵循相应的使用许可</li>
-              <li>品牌logo仅用于教育和识别目的，符合"合理使用"原则</li>
+              <li>品牌logo仅用于教育和识别目的，符合&ldquo;合理使用&rdquo;原则</li>
               <li>所有图片均不用于商业销售或盈利目的</li>
             </ul>
           </section>
@@ -32,7 +34,7 @@ export default function CopyrightPage() {
                 雅诗兰黛 (Estée Lauder)、兰蔻 (Lancôme)、迪奥 (Dior)、香奈儿 (Chanel)、
                 YSL (圣罗兰)、MAC、NARS、SK-II、资生堂 (Shiseido)、La Mer (海蓝之谜)、
                 兰芝 (Laneige)、悦诗风吟 (Innisfree)、美宝莲 (Maybelline)、
-                欧莱雅 (L'Oréal)、Tom Ford 等。
+                欧莱雅 (L&apos;Oréal)、Tom Ford 等。
               </p>
             </div>
             <p className="leading-relaxed mt-3">
@@ -69,12 +71,12 @@ export default function CopyrightPage() {
         </div>
 
         <div className="mt-8 text-center">
-          <a
+          <Link
             href="/"
             className="inline-block bg-pink-500 text-white px-8 py-3 rounded-full font-medium hover:bg-pink-600 transition-colors"
           >
             返回首页
-          </a>
+          </Link>
         </div>
       </div>
     </div>

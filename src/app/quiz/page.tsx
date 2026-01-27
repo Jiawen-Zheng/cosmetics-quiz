@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import { questions } from '@/data/questions'
 import { getRandomQuestions } from '@/utils/quiz'
 import { Question } from '@/types/question'
@@ -72,17 +73,15 @@ export default function QuizPage() {
         <div className="bg-white rounded-2xl shadow-xl p-8">
           {/* 图片 */}
           <div className="mb-6 flex justify-center items-center bg-gray-50 rounded-lg p-4" style={{ minHeight: '320px' }}>
-            <img
-              src={currentQuestion.image}
-              alt="化妆品"
-              className="max-w-full max-h-80 object-contain rounded-lg shadow-md"
-              style={{ 
-                width: 'auto',
-                height: 'auto',
-                maxWidth: '100%',
-                maxHeight: '320px'
-              }}
-            />
+            <div className="relative w-full h-80">
+              <Image
+                src={currentQuestion.image}
+                alt="化妆品"
+                fill
+                className="object-contain rounded-lg shadow-md"
+                sizes="(max-width: 768px) 100vw, 600px"
+              />
+            </div>
           </div>
 
           {/* 问题 */}
