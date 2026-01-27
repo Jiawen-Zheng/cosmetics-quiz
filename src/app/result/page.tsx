@@ -2,9 +2,10 @@
 
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import { Suspense } from 'react'
 import { getScoreComment } from '@/utils/quiz'
 
-export default function ResultPage() {
+function ResultContent() {
   const searchParams = useSearchParams()
   const score = parseInt(searchParams.get('score') || '0')
   const total = 10
@@ -62,5 +63,17 @@ export default function ResultPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function ResultPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-pink-100 to-purple-100 flex items-center justify-center">
+        <div className="text-2xl text-gray-600">加载中...</div>
+      </div>
+    }>
+      <ResultContent />
+    </Suspense>
   )
 }
