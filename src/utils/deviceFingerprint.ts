@@ -29,7 +29,7 @@ export function generateDeviceFingerprint(): string {
   components.push(String(navigator.hardwareConcurrency || 0));
 
   // 7. 设备内存（如果可用）
-  const deviceMemory = (navigator as any).deviceMemory;
+  const deviceMemory = (navigator as { deviceMemory?: number }).deviceMemory;
   if (deviceMemory) {
     components.push(String(deviceMemory));
   }
@@ -51,7 +51,7 @@ export function generateDeviceFingerprint(): string {
       ctx.fillText('Cosmetics Quiz', 4, 17);
       components.push(canvas.toDataURL());
     }
-  } catch (e) {
+  } catch {
     // Canvas指纹生成失败，跳过
   }
 
@@ -101,7 +101,7 @@ export function isDeviceActivated(): boolean {
 
     // 验证设备指纹是否匹配
     return data.fingerprint === currentFingerprint && data.activated === true;
-  } catch (e) {
+  } catch {
     return false;
   }
 }
@@ -125,7 +125,7 @@ export function activateDevice(code: string): boolean {
 
     localStorage.setItem('cosmetics_activation', JSON.stringify(activationData));
     return true;
-  } catch (e) {
+  } catch {
     return false;
   }
 }

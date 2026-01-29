@@ -20,7 +20,6 @@ function QuizContent() {
   
   // 根据模式确定每题分数
   const pointsPerQuestion = mode === 'random' ? 10 : 2
-  const totalQuestions = mode === 'random' ? 10 : 50
 
   useEffect(() => {
     // 根据模式选择题目
@@ -110,6 +109,7 @@ function QuizContent() {
           {/* 图片 */}
           <div className="mb-6 flex justify-center items-center bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-4 shadow-inner" style={{ minHeight: '320px' }}>
             <div className="relative w-full h-80 flex items-center justify-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={currentQuestion.image}
                 alt="化妆品"
