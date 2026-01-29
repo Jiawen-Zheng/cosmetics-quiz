@@ -10,56 +10,30 @@ export default function CopyrightPage() {
           <section>
             <h2 className="text-2xl font-semibold text-gray-800 mb-3">关于本网站</h2>
             <p className="leading-relaxed">
-              本网站是一个化妆品知识学习平台，旨在帮助用户学习和识别不同的化妆品类型和品牌。
-              所有内容仅用于教育和学习目的。
+              本网站是一个化妆品小测试平台，旨在帮助用户学习和识别不同的化妆品类型和品牌。
+              所有内容仅服务于测试题库目的。
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-3">图片来源</h2>
             <ul className="list-disc list-inside space-y-2 leading-relaxed">
-              <li>产品图片来自 Unsplash、Pexels 等免费图库，遵循相应的使用许可</li>
-              <li>品牌logo仅用于教育和识别目的，符合&ldquo;合理使用&rdquo;原则</li>
-              <li>所有图片均不用于商业销售或盈利目的</li>
+              <li>品牌logo仅用于教育和识别目的，</li>
+              <li>所有品牌名称、商标和logo归其各自所有，所有本网站与上述品牌没有任何官方关联、赞助或授权关系。</li>
             </ul>
           </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-3">商标声明</h2>
-            <p className="leading-relaxed mb-3">
-              所有品牌名称、商标和logo归其各自所有者所有，包括但不限于：
-            </p>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="text-sm leading-relaxed">
-                雅诗兰黛 (Estée Lauder)、兰蔻 (Lancôme)、迪奥 (Dior)、香奈儿 (Chanel)、
-                YSL (圣罗兰)、MAC、NARS、SK-II、资生堂 (Shiseido)、La Mer (海蓝之谜)、
-                兰芝 (Laneige)、悦诗风吟 (Innisfree)、美宝莲 (Maybelline)、
-                欧莱雅 (L&apos;Oréal)、Tom Ford 等。
-              </p>
-            </div>
-            <p className="leading-relaxed mt-3">
-              本网站与上述品牌没有任何官方关联、赞助或授权关系。
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-3">免责声明</h2>
-            <ul className="list-disc list-inside space-y-2 leading-relaxed">
-              <li>本网站内容仅供学习和参考，不构成任何购买建议</li>
-              <li>产品信息可能存在更新延迟，请以品牌官方信息为准</li>
-              <li>使用本网站即表示您同意本声明的所有条款</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-3">版权投诉</h2>
-            <p className="leading-relaxed">
-              如果您认为本网站的内容侵犯了您的权利，请通过以下方式联系我们：
-            </p>
-            <div className="bg-pink-50 p-4 rounded-lg mt-3">
-              <p className="text-sm">
-                我们将在收到通知后24小时内处理您的请求。
-              </p>
+          <section className="border-t pt-6 mt-8">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">联系方式</h3>
+            <div className="flex justify-center">
+              <a
+                href="https://xhslink.com/m/1ZZ7GicPCV0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-red-500 to-pink-500 text-white px-8 py-3 rounded-full font-medium hover:from-red-600 hover:to-pink-600 transition-all transform hover:scale-105 shadow-lg"
+              >
+                <span className="text-xl"></span>
+                <span>访问我的小红书：灵光信栈</span>
+              </a>
             </div>
           </section>
 
