@@ -203,6 +203,7 @@ export default function CustomQuizTest() {
         <div className="bg-white rounded-2xl shadow-xl p-8 mb-6">
           {/* 图片 */}
           <div className="mb-6">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
               src={currentQuestion.image} 
               alt="题目图片" 

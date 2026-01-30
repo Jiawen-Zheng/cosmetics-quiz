@@ -28,17 +28,6 @@ export default function CustomQuizManage() {
     }
   };
 
-  const formatDate = (timestamp: number) => {
-    const date = new Date(timestamp);
-    return date.toLocaleString('zh-CN', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit'
-    });
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 py-8 px-4">
       <div className="max-w-4xl mx-auto">
@@ -129,6 +118,7 @@ export default function CustomQuizManage() {
                 </div>
 
                 {/* 图片 */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={question.image} 
                   alt={`题目 ${index + 1}`}

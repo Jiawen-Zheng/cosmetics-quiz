@@ -151,6 +151,7 @@ export default function CreateCustomQuiz() {
               </button>
             ) : (
               <div className="relative">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={image} 
                   alt="预览" 
