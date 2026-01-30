@@ -64,7 +64,7 @@ export default function Home() {
         </div>
         
         {/* 测试模式选择 - 只有激活后才可点击 */}
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
           {/* 随机测试模式 */}
           {isActivated ? (
             <Link href="/quiz?mode=random">
@@ -148,12 +148,35 @@ export default function Home() {
           )}
         </div>
 
+        {/* 自定义测试模块 - 独立显示，不需要激活 */}
+        <div className="mb-8">
+          <Link href="/custom-quiz/manage">
+            <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transform hover:scale-105 transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-blue-400 max-w-2xl mx-auto">
+              <div className="text-5xl mb-4">📝</div>
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">自定义测试</h2>
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 mb-4">
+                <div className="text-3xl font-bold text-blue-600 mb-2">自由创建</div>
+                <div className="text-sm text-gray-600">自己出题，自己测试</div>
+              </div>
+              <ul className="text-left space-y-2 text-gray-600 mb-6">
+                <li>📷 拍照上传图片</li>
+                <li>✏️ 自定义题目和选项</li>
+                <li>💾 本地保存，设备绑定</li>
+                <li>🎯 随时添加和删除</li>
+              </ul>
+              <div className="bg-blue-500 text-white py-3 px-6 rounded-full font-semibold inline-block">
+                进入自定义测试 →
+              </div>
+            </div>
+          </Link>
+        </div>
+
         <div className="bg-white/80 backdrop-blur rounded-xl p-6 mb-6 max-w-2xl mx-auto">
           <p className="text-gray-600 text-sm leading-relaxed">
             💡 <span className="font-semibold">提示：</span>
             {isActivated 
-              ? '随机测试适合快速体验，全部题库适合系统学习。两种模式都是满分100分，选择你喜欢的方式开始吧！'
-              : '请先输入兑换码激活测试，激活后即可开始答题。'
+              ? '随机测试适合快速体验，全部题库适合系统学习。自定义测试让你可以创建自己的题目。三种模式都是满分100分，选择你喜欢的方式开始吧！'
+              : '请先输入兑换码激活测试，激活后即可开始答题。自定义测试无需激活，可直接使用。'
             }
           </p>
         </div>
