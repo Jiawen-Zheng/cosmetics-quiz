@@ -230,10 +230,10 @@ export default function CreateCustomQuiz() {
             <label className="block text-lg font-semibold text-gray-800 mb-3">
               3️⃣ 设置四个选项（点击右侧按钮设置正确答案）
             </label>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {options.map((option, index) => (
-                <div key={index} className="flex gap-3 items-center">
-                  <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                <div key={index} className="flex gap-2 items-stretch">
+                  <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
                     {String.fromCharCode(65 + index)}
                   </div>
                   <input
@@ -241,18 +241,18 @@ export default function CreateCustomQuiz() {
                     value={option}
                     onChange={(e) => handleOptionChange(index, e.target.value)}
                     placeholder={`选项 ${String.fromCharCode(65 + index)}`}
-                    className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-pink-400 focus:outline-none"
+                    className="flex-1 min-w-0 px-3 py-2 border-2 border-gray-300 rounded-lg focus:border-pink-400 focus:outline-none text-sm"
                     maxLength={50}
                   />
                   <button
                     onClick={() => setCorrectAnswer(index)}
-                    className={`px-4 py-3 rounded-xl font-semibold transition-all whitespace-nowrap ${
+                    className={`flex-shrink-0 px-3 py-2 rounded-lg text-xs font-semibold transition-all whitespace-nowrap ${
                       correctAnswer === index
-                        ? 'bg-green-500 text-white shadow-lg'
+                        ? 'bg-green-500 text-white shadow-md'
                         : 'bg-gray-200 text-gray-600 hover:bg-green-100 hover:text-green-700'
                     }`}
                   >
-                    {correctAnswer === index ? '✓ 正确答案' : '设为正确'}
+                    {correctAnswer === index ? '✓ 正确' : '设为正确'}
                   </button>
                 </div>
               ))}
