@@ -295,7 +295,7 @@ export default function CreateCustomQuiz() {
             <li>• 可以选择拍照或从相册导入图片</li>
             <li>• 图片会自动压缩以节省存储空间</li>
             <li>• 题目和选项会保存在你的设备本地</li>
-            <li>• <span className="text-green-600 font-semibold">点击"设为正确"按钮可以指定任意选项为正确答案</span></li>
+            <li>• <span className="text-green-600 font-semibold">点击&ldquo;设为正确&rdquo;按钮可以指定任意选项为正确答案</span></li>
             <li>• 默认选项A为正确答案，你可以随时更改</li>
             <li>• 建议使用清晰的产品图片</li>
           </ul>
