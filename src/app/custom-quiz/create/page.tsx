@@ -228,7 +228,7 @@ export default function CreateCustomQuiz() {
           {/* 选项设置 */}
           <div className="mb-8">
             <label className="block text-lg font-semibold text-gray-800 mb-3">
-              3️⃣ 设置四个选项
+              3️⃣ 设置四个选项（点击右侧按钮设置正确答案）
             </label>
             <div className="space-y-4">
               {options.map((option, index) => (
@@ -246,10 +246,10 @@ export default function CreateCustomQuiz() {
                   />
                   <button
                     onClick={() => setCorrectAnswer(index)}
-                    className={`px-4 py-3 rounded-xl font-semibold transition-all ${
+                    className={`px-4 py-3 rounded-xl font-semibold transition-all whitespace-nowrap ${
                       correctAnswer === index
-                        ? 'bg-green-500 text-white'
-                        : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
+                        ? 'bg-green-500 text-white shadow-lg'
+                        : 'bg-gray-200 text-gray-600 hover:bg-green-100 hover:text-green-700'
                     }`}
                   >
                     {correctAnswer === index ? '✓ 正确答案' : '设为正确'}
@@ -295,7 +295,8 @@ export default function CreateCustomQuiz() {
             <li>• 可以选择拍照或从相册导入图片</li>
             <li>• 图片会自动压缩以节省存储空间</li>
             <li>• 题目和选项会保存在你的设备本地</li>
-            <li>• 确保选择正确的答案选项</li>
+            <li>• <span className="text-green-600 font-semibold">点击"设为正确"按钮可以指定任意选项为正确答案</span></li>
+            <li>• 默认选项A为正确答案，你可以随时更改</li>
             <li>• 建议使用清晰的产品图片</li>
           </ul>
         </div>
