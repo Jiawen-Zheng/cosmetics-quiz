@@ -8,7 +8,8 @@ import { saveCustomQuestion, generateId, compressImage, getCustomQuestions, getM
 
 export default function CreateCustomQuiz() {
   const router = useRouter();
-  const fileInputRef = useRef<HTMLInputElement>(null);
+  const cameraInputRef = useRef<HTMLInputElement>(null);
+  const galleryInputRef = useRef<HTMLInputElement>(null);
   
   const [image, setImage] = useState<string>('');
   const [question, setQuestion] = useState('');
@@ -119,36 +120,75 @@ export default function CreateCustomQuiz() {
               1️⃣ 上传题目图片
             </label>
             
+            {/* 拍照输入 */}
             <input
-              ref={fileInputRef}
+              ref={cameraInputRef}
               type="file"
               accept="image/*"
               capture="environment"
               onChange={handleImageSelect}
               className="hidden"
             />
+            
+            {/* 相册输入 */}
+            <input
+              ref={galleryInputRef}
+              type="file"
+              accept="image/*"
+              onChange={handleImageSelect}
+              className="hidden"
+            />
 
             {!image ? (
-              <button
-                onClick={() => fileInputRef.current?.click()}
-                disabled={isUploading}
-                className="w-full h-64 border-3 border-dashed border-gray-300 rounded-xl hover:border-pink-400 hover:bg-pink-50 transition-all flex flex-col items-center justify-center gap-4 disabled:opacity-50"
-              >
-                {isUploading ? (
-                  <>
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-4 border-pink-600"></div>
-                    <p className="text-gray-600">处理中...</p>
-                  </>
-                ) : (
-                  <>
-                    <div className="text-6xl">📷</div>
-                    <div className="text-center">
-                      <p className="text-lg font-semibold text-gray-700 mb-1">点击拍照或选择图片</p>
-                      <p className="text-sm text-gray-500">支持 JPG、PNG 格式，最大 10MB</p>
-                    </div>
-                  </>
-                )}
-              </button>
+              <div className="space-y-4">
+                {/* 拍照按钮 */}
+                <button
+                  onClick={() => cameraInputRef.current?.click()}
+                  disabled={isUploading}
+                  className="w-full h-32 border-3 border-dashed border-gray-300 rounded-xl hover:border-pink-400 hover:bg-pink-50 transition-all flex flex-col items-center justify-center gap-3 disabled:opacity-50"
+                >
+                  {isUploading ? (
+                    <>
+                      <div className="animate-spin rounded-full h-12 w-12 border-b-4 border-pink-600"></div>
+                      <p className="text-gray-600">处理中...</p>
+                    </>
+                  ) : (
+                    <>
+                      <div className="text-5xl">📷</div>
+                      <div className="text-center">
+                        <p className="text-lg font-semibold text-gray-700">拍照</p>
+                        <p className="text-sm text-gray-500">打开相机拍摄照片</p>
+                      </div>
+                    </>
+                  )}
+                </button>
+
+                {/* 从相册选择按钮 */}
+                <button
+                  onClick={() => galleryInputRef.current?.click()}
+                  disabled={isUploading}
+                  className="w-full h-32 border-3 border-dashed border-gray-300 rounded-xl hover:border-purple-400 hover:bg-purple-50 transition-all flex flex-col items-center justify-center gap-3 disabled:opacity-50"
+                >
+                  {isUploading ? (
+                    <>
+                      <div className="animate-spin rounded-full h-12 w-12 border-b-4 border-purple-600"></div>
+                      <p className="text-gray-600">处理中...</p>
+                    </>
+                  ) : (
+                    <>
+                      <div className="text-5xl">🖼️</div>
+                      <div className="text-center">
+                        <p className="text-lg font-semibold text-gray-700">从相册选择</p>
+                        <p className="text-sm text-gray-500">从设备相册中选择图片</p>
+                      </div>
+                    </>
+                  )}
+                </button>
+
+                <p className="text-center text-sm text-gray-500">
+                  支持 JPG、PNG 格式，最大 10MB
+                </p>
+              </div>
             ) : (
               <div className="relative">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -252,6 +292,7 @@ export default function CreateCustomQuiz() {
         <div className="mt-6 bg-white/80 backdrop-blur rounded-xl p-6">
           <h3 className="font-semibold text-gray-800 mb-3">💡 创建提示</h3>
           <ul className="space-y-2 text-sm text-gray-600">
+            <li>• 可以选择拍照或从相册导入图片</li>
             <li>• 图片会自动压缩以节省存储空间</li>
             <li>• 题目和选项会保存在你的设备本地</li>
             <li>• 确保选择正确的答案选项</li>
